@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { HardDrive, Check } from 'lucide-react'
 import { Card } from '@/components/common/Card'

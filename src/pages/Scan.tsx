@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Scan as ScanIcon } from 'lucide-react'
@@ -41,7 +41,7 @@ export function ScanPage() {
   const loadDrives = async () => {
     try {
       const response = await window.electronAPI.getDrives()
-      if (response.success) {
+      if (response.success && response.drives) {
         setDrives(response.drives)
       }
     } catch (error) {

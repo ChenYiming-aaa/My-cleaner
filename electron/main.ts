@@ -1,6 +1,10 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
 import path from 'path'
+import { fileURLToPath } from 'url'
 import { scanHandlers } from './ipc/scanHandlers'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 let mainWindow: BrowserWindow | null = null
 

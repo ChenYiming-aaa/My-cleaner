@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Trash2, ArrowLeft, Recycle, Zap } from 'lucide-react'
@@ -34,7 +34,7 @@ export function CleanPage() {
 
   const categoryStats = getCategoryStats()
   const categories = categoryStats.map(cat => ({
-    id: cat.category,
+    id: cat.category as string,
     label: cat.label,
     count: cat.count,
     size: cat.totalSize,
@@ -52,7 +52,7 @@ export function CleanPage() {
     try {
       const fileIds = selectedFilesList.map(f => f.id)
       await window.electronAPI.cleanFiles(fileIds, deleteMode === 'recycle')
-      navigate('/clean-result')
+      navigate('/')
     } catch (error) {
       console.error('Clean failed:', error)
     } finally {
@@ -152,7 +152,7 @@ export function CleanPage() {
             <FileList
               files={result.files}
               onToggleFile={toggleFileSelection}
-              onDeleteFile={(id) => {
+              onDeleteFile={(_id) => {
                 // 单个文件删除逻辑
               }}
             />

@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Check, AlertTriangle, Shield } from 'lucide-react'
 
@@ -13,7 +12,7 @@ interface Category {
 
 interface CategoryFilterProps {
   categories: Category[]
-  onToggleCategory: (categoryId: string) => void
+  onToggleCategory: (categoryId: any) => void
 }
 
 const riskIcons = {
