@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-parchment-50: #FAF8F5;
+    --color-parchment-100: #F5F0E8;
+    --color-parchment-200: #E8DFD0;
+    --color-parchment-300: #D4C5A9;
+    --color-parchment-400: #C4A35A;
+    --color-parchment-500: #B8944F;
+    --color-parchment-600: #A67C4A;
+    --color-parchment-700: #8B6538;
+    --color-parchment-800: #6B4E2D;
+    --color-parchment-900: #3D2B1F;
+  }
+
+  body {
+    @apply font-sans text-parchment-900 bg-parchment-50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm;
+  }
+
+  .card-shadow {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .card-shadow-lg {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-parchment-50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-parchment-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-parchment-400;
+}
